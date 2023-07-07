@@ -1,0 +1,35 @@
+DATASET_GRADIENT
+#In gradient datasets, each ID is associated to a single numeric value which is converted to a colored box based on the gradient defined.
+
+#lines starting with a hash are comments and ignored during parsing
+
+#=================================================================#
+#                    MANDATORY SETTINGS                           #
+#=================================================================#
+#select the separator which is used to delimit the data below (TAB,SPACE or COMMA).This separator must be used throught this file.
+SEPARATOR TAB
+#SEPARATOR SPACE
+#SEPARATOR COMMA
+
+#label is used in the legend table (can be changed later)
+DATASET_LABEL	label 1
+
+#dataset color (can be changed later)
+COLOR	#ff0000
+
+#=================================================================#
+#                    OPTIONAL SETTINGS                            #
+#=================================================================#
+
+
+#define the gradient colors. Values in the dataset will be mapped onto the corresponding color gradient.
+COLOR_MIN	#0000ff
+COLOR_MAX	#ff0000
+
+
+
+#Internal tree nodes can be specified using IDs directly, or using the 'last common ancestor' method described in iTOL help pages
+#=================================================================#
+#       Actual data follows after the "DATA" keyword              #
+#=================================================================#
+DATA
