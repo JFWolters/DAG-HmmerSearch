@@ -1,0 +1,5 @@
+executable = $(exec)
+arguments = $(param1)
+initialdir = $(run_folder)
+
+queue

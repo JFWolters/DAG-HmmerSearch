@@ -1,0 +1,8 @@
+executable = $(exec)
+arguments = $(param1) $(param2)
+log = $(base)_$(Cluster).log
+error = $(base)_$(Cluster).err
+output = $(base)_$(Cluster).out
+initialdir = $(run_folder)
+
+queue

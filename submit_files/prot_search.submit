@@ -1,0 +1,9 @@
+executable = $(exec)
+arguments = $(param1) $(param2) $(param3) $(param4) $(param5) $(param6)
+log = prot_search_$(Cluster).log
+error = prot_search_$(Cluster).err
+output = prot_search_$(Cluster).out
+initialdir = $(run_folder)
+requirements = OpSysAndVer == "CentOS7"
+
+queue
