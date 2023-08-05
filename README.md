@@ -16,12 +16,12 @@ For each query, takes as input (tab delimited):
 1)Arbitrary query ID
 2)Full path to protein sequence alignment
 
-##To Run:
+## To Run:
 To run, modify the vars.config, then run makeDAG.sh
 
 The pipeline is split into three DAG submits: the hmmer search, combining the results, and generating the gene tree and related output.
 
-###Hmmer search
+### Hmmer search
 First, run as:
 condor_submit_dag annot_prot_search.dag
 
@@ -51,7 +51,7 @@ Table of Protein hit sizes
 #log files are in the main folder
 prot_search_[job_id].out,.log,.err
 
-###Combine gene results
+### Combine gene results
 Second, to combine the results for each query, run as:
 condor_submit_dag get_genes.dag
 
@@ -76,7 +76,7 @@ log files:
 get_genes__[job_id].err,.log,.out
 
 
-###Prepare gene tree
+### Prepare gene tree
 condor_submit_dag align_cds.dag
 
 Summary of output files for hit aligmennt:
