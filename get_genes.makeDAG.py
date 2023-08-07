@@ -19,8 +19,8 @@ varDict = {}
 for var in vars:
     varDict[var[0]]=var[1]
 
-scripts_dir=varDict["scripts_dir"]
-submit_dir=varDict["submit_dir"]
+pipeline_dir=varDict["pipeline_dir"]
+
 
 
 queryFileName=varDict["queryFileName"]
@@ -41,9 +41,9 @@ myDag.add_job(initialize_run)
 for line in lines:
     gene=line[0]
 
-    get_genes_job = Job(submit_dir + '/get_genes.submit', name = "get_" + gene)
+    get_genes_job = Job(pipeline_dir + "/submit_dir/get_genes.submit', name = "get_" + gene)
     get_genes_job.add_var('run_folder', cwd + '/gene_trees/' + gene )
-    get_genes_job.add_var('exec',scripts_dir + '/get_genes.sh')
+    get_genes_job.add_var('exec',pipeline_dir + '/scripts_dir/get_genes.sh')
     get_genes_job.add_var('base','get_genes_')
     get_genes_job.add_var('param1',cwd)
     get_genes_job.add_var('param2',gene)
