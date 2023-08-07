@@ -1,16 +1,16 @@
 #!/bin/bash
 hostname
-# inFileName=/mnt/bigdata/linuxhome/jwolters/katharina_busco_tree/20210715/genomes.tab
+
 base_dir=$1
 gene=$2
 IFS=""
 
 source $base_dir/vars.config
 
-/opt/bifxapps/miniconda3/condabin/conda init bash
+$conda init bash
 source ~/.bashrc
 unset PYTHONPATH
-conda activate /home/glbrc.org/jwolters/conda_envs/biopython
+conda activate $pythonenv
 
 if [ -f $gene.prot.fasta ] ; then
     rm $gene.prot.fasta
@@ -71,7 +71,7 @@ conda deactivate
 ####Make histogram of scores
 unset R_LIBS
 unset R_LIBS_USER
-conda activate /mnt/bigdata/linuxhome/jwolters/conda_envs/R_env
+conda activate $R_env
 
 Rscript $scripts_dir/make_score_histogram.R $gene.score_table.tab
 
