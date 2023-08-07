@@ -20,8 +20,7 @@ varDict = {}
 for var in vars:
     varDict[var[0]]=var[1]
 
-scripts_dir=varDict["scripts_dir"]
-submit_dir=varDict["submit_dir"]
+pipeline_dir=varDict["pipeline_dir"]
 
 subjectFileName=varDict["subjectFileName"]
 inputFile = open(subjectFileName,"r")
