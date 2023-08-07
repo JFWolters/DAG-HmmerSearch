@@ -1,0 +1,7 @@
+saccharomyces_arboricola	/path/to/test/inputs/saccharomyces_arboricola.final.pep	/path/to/test/inputs/saccharomyces_arboricola.final.cds
+saccharomyces_cerevisiae	/path/to/test/inputs/saccharomyces_cerevisiae.final.pep	/path/to/test/inputs/saccharomyces_cerevisiae.final.cds
+saccharomyces_eubayanus	/path/to/test/inputs/saccharomyces_eubayanus.final.pep	/path/to//test/inputs/saccharomyces_eubayanus.final.cds
+saccharomyces_kudriavzevii	/path/to/test/inputs/saccharomyces_kudriavzevii.final.pep	/mnt/bigdata/linuxhome/jwolters/hmmer_pipelines/v10.1/test/inputs/saccharomyces_kudriavzevii.final.cds
+saccharomyces_mikatae	/path/to/test/inputs/saccharomyces_mikatae.final.pep	/path/to/test/inputs/saccharomyces_mikatae.final.cds
+saccharomyces_paradoxus	/path/to/test/inputs/saccharomyces_paradoxus.final.pep	/path/to/test/inputs/saccharomyces_paradoxus.final.cds
+saccharomyces_uvarum	/path/to/inputs/saccharomyces_uvarum.final.pep	/path/to/test/inputs/saccharomyces_uvarum.final.cds
