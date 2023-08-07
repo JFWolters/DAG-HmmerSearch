@@ -15,7 +15,7 @@ source ~/.bashrc
 unset PYTHONPATH
 
 
-conda activate /mnt/bigdata/linuxhome/jwolters/conda_envs/biopython
+conda activate $pythonenv
 
 $hmmer_path/hmmsearch --tblout $species.table.txt -o $species.hmmer_results.txt -A $species.hmmer_results.aligned.txt -E $evalue $base_dir/$gene.profile.hmm $prots
 
