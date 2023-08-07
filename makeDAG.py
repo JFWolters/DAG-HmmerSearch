@@ -37,18 +37,18 @@ queryFile.close()
 queryLines=[line.rstrip('\n') for line in queryLines]
 queryLines=[line.split('\t') for line in queryLines]
 
-initialize_run = Job(submit_dir + '/generalized_submit.pass2.submit', name='initialize')
+initialize_run = Job(pipeline_dir + '/submit_dir/generalized_submit.pass2.submit', name='initialize')
 initialize_run.add_var('run_folder', '.')
-initialize_run.add_var('exec',scripts_dir + '/initialize.sh')
+initialize_run.add_var('exec',pipeline_dir + '/scripts_dir/initialize.sh')
 initialize_run.add_var('param1',subjectFileName)
 initialize_run.add_var('param2',queryFileName)
 initialize_run.add_var('base',"initialize")
 
 myDag.add_job(initialize_run)
 
-make_profile_job = Job(submit_dir + '/generalized_submit.pass2.submit', name='make_hmmer_db')
+make_profile_job = Job(pipeline_dir + '/submit_dir/generalized_submit.pass2.submit', name='make_hmmer_db')
 make_profile_job.add_var('run_folder', '.')
-make_profile_job.add_var('exec',scripts_dir + '/make_hmmer_db.sh')
+make_profile_job.add_var('exec',pipeline_dir + '/scripts_dir/make_hmmer_db.sh')
 make_profile_job.add_var('param1',cwd)
 make_profile_job.add_var('param2',queryFileName)
 make_profile_job.add_var('base',"make_hmmer_db")
