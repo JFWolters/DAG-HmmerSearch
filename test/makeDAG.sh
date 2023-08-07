@@ -7,6 +7,6 @@ python=/path/to/python2.7
 #for use on scarcity, you can use/opt/bifxapps/python/bin/python2.7 
 $python $makeDAG_path/makeDAG.py
 
-$python /opt/bifxapps/python/bin/python2.7 $makeDAG_path/cds_align.makeDAG.py
+$python $makeDAG_path/cds_align.makeDAG.py
 
-$python /opt/bifxapps/python/bin/python2.7 $makeDAG_path/get_genes.makeDAG.py
+$python $makeDAG_path/get_genes.makeDAG.py
