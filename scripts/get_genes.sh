@@ -42,13 +42,9 @@ while read line ; do
         
         cat $base_dir/isr/$gene/$species/$species.protein_hits.filtered.species_id.fasta >> $gene.prot.fasta
         
-        # cp ../../isr/$gene/$species/$species.CDS.filtered.fasta temp.cds.fasta
-        # python $scripts_dir/add_species_to_ID.py temp.cds.fasta $species
+       
         cat $base_dir/isr/$gene/$species/$species.CDS.filtered.species_id.fasta >> $gene.cds.fasta
-        
-                
-        # rm temp*
-        
+
         cat $base_dir/isr/$gene/$species/$species.score_table.tab >> $gene.score_table.tab
         
         tail -n +2 $base_dir/isr/$gene/$species/$species.CDS.filtered.sequence_sizes.tab > temp
@@ -95,7 +91,7 @@ done < $subjectFileName
 
 
 ###Generate gene count file for itol
-cp /mnt/bigdata/linuxhome/jwolters/hmmer_pipelines/v10.1/gene_count_iTOL_header.txt $gene.gene_count_iTOL.txt
+cp $gene_count_iTOL_header $gene.gene_count_iTOL.txt
 tail -n +2 $gene.hit_counts.txt | cut -f 1,3 >> $gene.gene_count_iTOL.txt
 
 sed -i "s/GENENAME/$gene/g" $gene.gene_count_iTOL.txt
