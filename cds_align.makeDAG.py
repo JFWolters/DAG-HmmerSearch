@@ -41,7 +41,7 @@ for line in lines:
     run_alignment_job.add_var('exec',scripts_dir+'/align_cds.2.sh')
     run_alignment_job.add_var('base','run_alignment_')
     run_alignment_job.add_var('param1',gene)
-    
+    run_alignment_job.add_var('param2',cwd)   
     myDag.add_job(run_alignment_job)
     
 
