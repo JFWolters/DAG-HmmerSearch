@@ -14,5 +14,5 @@ $trimal -in $gene.prot.aligned.fasta -out $gene.prot.aligned.trimmed.fasta -fast
 outFileName=$gene.prot.aligned.trimmed.fasttree
 $fasttree -lg -gamma -spr 4 -slownni -mlacc 2 -out $outFileName $gene.prot.aligned.trimmed.fasta
 
-cat /mnt/bigdata/linuxhome/jwolters/hmmer_pipelines/v10/scripts/itol_header.txt > $gene.scores.iTOL.txt
+cat $itol_header > $gene.scores.iTOL.txt
 cat $gene.score_table.tab >> $gene.scores.iTOL.txt
