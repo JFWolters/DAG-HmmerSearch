@@ -63,9 +63,9 @@ for queryLine in queryLines:
         species = line[0]
         prots=line[1]
         cds=line[2]
-        prot_search_job = Job(submit_dir + '/prot_search.submit', name = "annot_prot_search_" + gene + "_" + species)
+        prot_search_job = Job(pipeline_dir + '/submit_dir/prot_search.submit', name = "annot_prot_search_" + gene + "_" + species)
         prot_search_job.add_var('run_folder', cwd + '/isr/' + gene + "/" + species )
-        prot_search_job.add_var('exec',scripts_dir + '/run_me.sh')
+        prot_search_job.add_var('exec',pipeline_Dir + '/scripts_dir/run_me.sh')
         prot_search_job.add_var('param1',species)
         prot_search_job.add_var('param2',gene)
         prot_search_job.add_var('param3',prots)
