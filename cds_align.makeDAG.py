@@ -19,9 +19,7 @@ varDict = {}
 for var in vars:
     varDict[var[0]]=var[1]
 
-scripts_dir=varDict["scripts_dir"]
-submit_dir=varDict["submit_dir"]
-
+pipeline_dir=varDict["pipeline_dir"]
 
 queryFileName=varDict["queryFileName"]
 inputFile = open(queryFileName,"r")
@@ -36,9 +34,9 @@ inputFile.close()
 for line in lines:
     gene=line[0]
     #run alignment
-    run_alignment_job = Job(submit_dir+'/align.submit', name = "align_cds_" + gene)
+    run_alignment_job = Job(pipeline_dir + '/submit_dir/align.submit', name = "align_cds_" + gene)
     run_alignment_job.add_var('run_folder', cwd + '/gene_trees/' + gene )
-    run_alignment_job.add_var('exec',scripts_dir+'/align_cds.2.sh')
+    run_alignment_job.add_var('exec',pipeline_dir + '/scripts_dir/align_cds.2.sh')
     run_alignment_job.add_var('base','run_alignment_')
     run_alignment_job.add_var('param1',gene)
     run_alignment_job.add_var('param2',cwd)   
