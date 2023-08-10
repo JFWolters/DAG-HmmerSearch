@@ -69,7 +69,7 @@ unset R_LIBS
 unset R_LIBS_USER
 conda activate $R_env
 
-Rscript $scripts_dir/make_score_histogram.R $gene.score_table.tab
+Rscript $pipeline_dir/scripts_dir/make_score_histogram.R $gene.score_table.tab
 
 conda deactivate
 
