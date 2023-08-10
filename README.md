@@ -1,6 +1,6 @@
 # DAG-HmmerSearch  
 Search a target set of proteins for a given set of queries using HMMER using HTCondor's job submission tools.  
-V10.1 runs hmmer, extracts protein hits, and then extracts cds hits from provided DNA.  
+Runs hmmer, extracts protein hits, and then extracts cds hits from provided DNA.  
 It also aligns the resulting hits, produces a gene tree, and prepares various files for displaying hit scores on itol.  
    
 Note that extracting cds hits assumes the protein id is contained in the cds id.  
