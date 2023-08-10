@@ -34,7 +34,7 @@ inputFile.close()
 for line in lines:
     gene=line[0]
     #run alignment
-    run_alignment_job = Job(pipeline_dir + '/submit_dir/align.submit', name = "align_cds_" + gene)
+    run_alignment_job = Job(pipeline_dir + '/submit_files/align.submit', name = "align_cds_" + gene)
     run_alignment_job.add_var('run_folder', cwd + '/gene_trees/' + gene )
     run_alignment_job.add_var('exec',pipeline_dir + '/scripts_dir/align_cds.2.sh')
     run_alignment_job.add_var('base','run_alignment_')
