@@ -32,7 +32,7 @@ inputFile.close()
 
 initialize_run = Job(pipeline_dir + '/submit_files/initialize.submit', name='initialize')
 initialize_run.add_var('run_folder', '.')
-initialize_run.add_var('exec',pipeline_dir + 'scripts/get_genes_initialize.sh')
+initialize_run.add_var('exec',pipeline_dir + '/scripts/get_genes_initialize.sh')
 initialize_run.add_var('param1',queryFileName)
 
 myDag.add_job(initialize_run)
