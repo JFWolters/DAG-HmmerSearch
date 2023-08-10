@@ -1,12 +1,10 @@
-makeDAG_path=/path/to/main_pipeline_directory
+source vars.config
 
 #fix your pythonpath to include pydagman
-export PYTHONPATH=$PYTHONPATH:/mnt/bigdata/linuxhome/jwolters/packages
+export PYTHONPATH=$PYTHONPATH:$pydagman_location
 
-python=/path/to/python2.7
-#for use on scarcity, you can use/opt/bifxapps/python/bin/python2.7 
-$python $makeDAG_path/makeDAG.py
+$python2 $pipeline_dir/makeDAG.py
 
-$python $makeDAG_path/cds_align.makeDAG.py
+$python2 $pipeline_dir/cds_align.makeDAG.py
 
-$python $makeDAG_path/get_genes.makeDAG.py
+$python2 $pipeline_dir/get_genes.makeDAG.py
