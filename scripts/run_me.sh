@@ -19,19 +19,19 @@ conda activate $pythonenv
 
 $hmmer_path/hmmsearch --tblout $species.table.txt -o $species.hmmer_results.txt -A $species.hmmer_results.aligned.txt -E $evalue $base_dir/$gene.profile.hmm $prots
 
-python $pipeline_dir/scripts_dir/fix_table.1.py $species.table.txt $species
+python $pipeline_dir/scripts/fix_table.1.py $species.table.txt $species
 
-python $pipeline_dir/scripts_dir/extract_prots.1.2.py $species.table.fixed.tab $prots $species
+python $pipeline_dir/scripts/extract_prots.1.2.py $species.table.fixed.tab $prots $species
 
-python $pipeline_dir/scripts_dir/extract_CDS.2.py $species.protein_hits.fasta $cds_file
+python $pipeline_dir/scripts/extract_CDS.2.py $species.protein_hits.fasta $cds_file
 
-python $pipeline_dir/scripts_dir/filterHits.1.py $species.protein_hits.fasta $species.CDS.fasta $species.table.fixed.tab $score_cutoff
+python $pipeline_dir/scripts/filterHits.1.py $species.protein_hits.fasta $species.CDS.fasta $species.table.fixed.tab $score_cutoff
 
 ###Add the species name to the fasta headers
 
-python $pipeline_dir/scripts_dir/add_species_to_ID.py $species.protein_hits.filtered.fasta $species
+python $pipeline_dir/scripts/add_species_to_ID.py $species.protein_hits.filtered.fasta $species
 
-python $pipeline_dir/scripts_dir/add_species_to_ID.py $species.CDS.filtered.fasta $species
+python $pipeline_dir/scripts/add_species_to_ID.py $species.CDS.filtered.fasta $species
 
 ####make score table
 #may need to make a parallel version for cds?
@@ -54,9 +54,9 @@ rm seq_headers.txt
 
 ####Get Sequence lengths
 
-python $pipeline_dir/scripts_dir/getSeqSizes.py $species.CDS.filtered.fasta
+python $pipeline_dir/scripts/getSeqSizes.py $species.CDS.filtered.fasta
 mv Sequence_sizes.tab $species.CDS.filtered.sequence_sizes.tab
-python $pipeline_dir/scripts_dir/getSeqSizes.py $species.protein_hits.filtered.species_id.fasta
+python $pipeline_dir/scripts/getSeqSizes.py $species.protein_hits.filtered.species_id.fasta
 mv Sequence_sizes.tab $species.protein_hits.filtered.species_id.sequence_sizes.tab
 
 conda deactivate
