@@ -30,9 +30,9 @@ lines = [line.rstrip("\n").split("\t") for line in lines]
 # lines.pop(0) #assumes header, removes it
 inputFile.close()
 
-initialize_run = Job(submit_dir+'/initialize.submit', name='initialize')
+initialize_run = Job(pipeline_dir + 'submit_dir/initialize.submit', name='initialize')
 initialize_run.add_var('run_folder', '.')
-initialize_run.add_var('exec',scripts_dir + '/get_genes_initialize.sh')
+initialize_run.add_var('exec',pipeline_dir + 'scripts_dir/get_genes_initialize.sh')
 initialize_run.add_var('param1',queryFileName)
 
 myDag.add_job(initialize_run)
