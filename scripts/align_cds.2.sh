@@ -4,6 +4,7 @@
 gene=$1
 base_dir=$2
 
+source $base_dir/vars.config
 
 $clustalo -i $gene.prot.fasta -o $gene.prot.aligned.fasta
 
