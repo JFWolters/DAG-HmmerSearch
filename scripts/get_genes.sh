@@ -91,7 +91,7 @@ done < $subjectFileName
 
 
 ###Generate gene count file for itol
-cp $gene_count_iTOL_header $gene.gene_count_iTOL.txt
+cp $pipeline_dir/gene_count_iTOL_header $gene.gene_count_iTOL.txt
 tail -n +2 $gene.hit_counts.txt | cut -f 1,3 >> $gene.gene_count_iTOL.txt
 
 sed -i "s/GENENAME/$gene/g" $gene.gene_count_iTOL.txt
