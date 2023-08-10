@@ -41,7 +41,7 @@ myDag.add_job(initialize_run)
 for line in lines:
     gene=line[0]
 
-    get_genes_job = Job(pipeline_dir + "/submit_dir/get_genes.submit', name = "get_" + gene)
+    get_genes_job = Job(pipeline_dir + '/submit_dir/get_genes.submit', name = "get_" + gene)
     get_genes_job.add_var('run_folder', cwd + '/gene_trees/' + gene )
     get_genes_job.add_var('exec',pipeline_dir + '/scripts_dir/get_genes.sh')
     get_genes_job.add_var('base','get_genes_')
